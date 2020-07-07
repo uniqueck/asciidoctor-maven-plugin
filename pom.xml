@@ -275,7 +275,7 @@
             <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-release-plugin</artifactId>
-              <version>2.1</version>
+              <version>3.0.0-M1</version>
               <configuration>
                 <mavenExecutorId>forked-path</mavenExecutorId>
               </configuration>
@@ -350,7 +350,7 @@
               <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>3.2.0</version>
               </plugin>
               <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -401,7 +401,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.2.0</version>
                         <configuration>
                             <detectJavaApiLink>false</detectJavaApiLink>
                         </configuration>
@@ -495,7 +494,7 @@
         <repository>
             <id>bintray-asciidoctor-maven-asciidoctor-maven-plugin</id>
             <name>asciidoctor-maven-asciidoctor-maven-plugin</name>
-            <url>https://api.bintray.com/maven/asciidoctor/maven/asciidoctor-maven-plugin</url>
+            <url>https://api.bintray.com/maven/abelsromero/maven/asciidoctor-maven-plugin</url>
         </repository>
     </distributionManagement>
 
