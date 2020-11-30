@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Tips and Tricks :: maven-plugin docs</title>
+    <link rel="prev" href="examples.html">
+    <link rel="next" href="v2-migration-guide.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">maven-plugin docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Community</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="http://discuss.asciidoctor.org" target="_blank">Discuss</a>
+            <a class="navbar-item" href="https://gitter.im/asciidoctor/asciidoctor" target="_blank">Chat - General</a>
+            <a class="navbar-item" href="https://gitter.im/asciidoctor/asciidoctorj" target="_blank">Chat - Asciidoctor J</a>
+          </div>
+        </div>
+        <a class="navbar-item" href="https://twitter.com/asciidoctor" target="_blank" rel="noopener">
+          <span class="icon">
+            <svg aria-hidden="true" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path fill="#57aaee" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+            </svg>
+          </span>
+         </a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="maven-plugin" data-version="2.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Maven Tools</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Maven Plugin</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="introduction.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Goals</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="goals/process-asciidoc.html">process-asciidoc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="goals/auto-refresh.html">auto-refresh</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="goals/http.html">http</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="usage.html">Usage</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="command-line-configuration.html">Command Line Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="examples.html">Examples</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Help &amp; Guides</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="tips-and-tricks.html">Tips and Tricks</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="v2-migration-guide.html">v2 migration guide</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Maven Site Integration</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../site-integration/site-integration.html">Setup &amp; Configuration</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Project Documentation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../project/contributing.html">Contributing</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../project/copyright-and-licence.html">Copyright and License</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Maven Tools</span>
+    <span class="version">2.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Maven Tools</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">2.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Maven Tools</a></li>
+    <li>Maven Plugin</li>
+    <li>Help &amp; Guides</li>
+    <li><a href="tips-and-tricks.html">Tips and Tricks</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/asciidoctor/asciidoctor-maven-plugin/edit/master/docs/modules/plugin/pages/tips-and-tricks.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Tips and Tricks</h1>
+<div class="sect1">
+<h2 id="fail-on-missing-attributes"><a class="anchor" href="#fail-on-missing-attributes"></a>Fail on missing attributes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Attributes whose value cannot be resolved are ignored by default and not shown as error or warning.
+If you need to, this behaviour can be modified using the <a href="https://asciidoctor.org/docs/user-manual/#missing-attribute">missing-attribute</a> attribute.</p>
+</div>
+<div class="paragraph">
+<p>Combining it with logHandler option it is possible to report an error and abort a build in case of missing attributes.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;configuration&gt;
+    &lt;attributes&gt;
+        &lt;attribute-missing&gt;warn&lt;/attribute-missing&gt;
+    &lt;/attributes&gt;
+    &lt;logHandler&gt;
+        &lt;failIf&gt;
+            &lt;severity&gt;WARN&lt;/severity&gt;
+        &lt;/failIf&gt;
+    &lt;/logHandler&gt;
+&lt;/configuration&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generate-your-documentation-in-separate-folders-per-version"><a class="anchor" href="#generate-your-documentation-in-separate-folders-per-version"></a>Generate your documentation in separate folders per version</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use Maven <code>project.version</code> property to create dedicated custom output directories.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;configuration&gt;
+    ...
+    &lt;outputDirectory&gt;target/generated-docs/${project.version}&lt;/outputDirectory&gt;
+    ...
+&lt;/configuration&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="enable-section-numbering"><a class="anchor" href="#enable-section-numbering"></a>Enable section numbering</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Enable section numbering in the build using the <code>attributes</code> section.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;configuration&gt;
+    ...
+    &lt;attributes&gt;
+        ...
+        &lt;sectnums&gt;true&lt;/sectnums&gt;
+        ...
+    &lt;/attributes&gt;
+    ...
+&lt;/configuration&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="add-version-and-build-date-to-the-header"><a class="anchor" href="#add-version-and-build-date-to-the-header"></a>Add version and build date to the header</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Automatically add version details to header and footer to all documents.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;properties&gt;
+   &lt;maven.build.timestamp.format&gt;yyyy-MM-dd HH&lt;/maven.build.timestamp.format&gt;  <i class="conum" data-value="1"></i><b>(1)</b>
+&lt;/properties&gt;
+
+&lt;configuration&gt;
+    ...
+    &lt;attributes&gt;
+        ...
+        &lt;revnumber&gt;${project.version}&lt;/revnumber&gt;
+        &lt;revdate&gt;${maven.build.timestamp}&lt;/revdate&gt;
+        &lt;organization&gt;${project.organization.name}&lt;/organization&gt;
+    &lt;/attributes&gt;
+    ...
+&lt;/configuration&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Add <code>maven.build.timestamp.format</code> to the pom&#8217;s properties section to set a custom date format.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="show-asciidoctor-version"><a class="anchor" href="#show-asciidoctor-version"></a>Show Asciidoctor version</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you are not sure what version of the Asciidoctor converter is being used.
+You can obtain it using the version attribute like in the example blow.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Asciidoctor version: {asciidoctor-version}</pre>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="examples.html">Examples</a></span>
+  <span class="next"><a href="v2-migration-guide.html">v2 migration guide</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

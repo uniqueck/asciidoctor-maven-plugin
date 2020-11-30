@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Asciidoctor-maven-plugin 2.x.x migration guide :: maven-plugin docs</title>
+    <link rel="prev" href="tips-and-tricks.html">
+    <link rel="next" href="../site-integration/site-integration.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">maven-plugin docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Community</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="http://discuss.asciidoctor.org" target="_blank">Discuss</a>
+            <a class="navbar-item" href="https://gitter.im/asciidoctor/asciidoctor" target="_blank">Chat - General</a>
+            <a class="navbar-item" href="https://gitter.im/asciidoctor/asciidoctorj" target="_blank">Chat - Asciidoctor J</a>
+          </div>
+        </div>
+        <a class="navbar-item" href="https://twitter.com/asciidoctor" target="_blank" rel="noopener">
+          <span class="icon">
+            <svg aria-hidden="true" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path fill="#57aaee" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+            </svg>
+          </span>
+         </a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="maven-plugin" data-version="2.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Maven Tools</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Maven Plugin</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="introduction.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Goals</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="goals/process-asciidoc.html">process-asciidoc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="goals/auto-refresh.html">auto-refresh</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="goals/http.html">http</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="usage.html">Usage</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="command-line-configuration.html">Command Line Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="examples.html">Examples</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Help &amp; Guides</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="tips-and-tricks.html">Tips and Tricks</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="v2-migration-guide.html">v2 migration guide</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Maven Site Integration</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../site-integration/site-integration.html">Setup &amp; Configuration</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Project Documentation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../project/contributing.html">Contributing</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../project/copyright-and-licence.html">Copyright and License</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Maven Tools</span>
+    <span class="version">2.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Maven Tools</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">2.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Maven Tools</a></li>
+    <li>Maven Plugin</li>
+    <li>Help &amp; Guides</li>
+    <li><a href="v2-migration-guide.html">v2 migration guide</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/asciidoctor/asciidoctor-maven-plugin/edit/master/docs/modules/plugin/pages/v2-migration-guide.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Asciidoctor-maven-plugin 2.x.x migration guide</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>asciidoctor-maven-plugin</code> 2.0.0 introduces some breaking changes.
+This guide will provide the steps required to update a project currently using 1.5.x or 1.6.x version to 2.x.x.
+For each of the breaking changes, the motivation and new equivalent configuration will be offered.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+New configuration details are highlighted in <strong>bold</strong>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="motivations"><a class="anchor" href="#motivations"></a>1. Motivations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Changes are mainly motivated to make the maven integration as seamless as possible with Asciidoctor.
+With that goal in mind most of the changes fall under one of these cases.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Align with Asciidoctor conventions and default values.
+Also, when possible aligning with other build solutions options like the <a href="https://github.com/asciidoctor/asciidoctor-gradle-plugin">gradle plugin</a> or <a href="https://antora.org/">Antora</a>.</p>
+</li>
+<li>
+<p>Make clear distinction between Asciidoctor options and attributes.
+This simplifies the plugin&#8217;s code and projects' configuration avoiding ambiguities.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="changes"><a class="anchor" href="#changes"></a>2. Changes</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="removal-of-support-for-java-7"><a class="anchor" href="#removal-of-support-for-java-7"></a>2.1. Removal of support for Java 7</h3>
+<div class="paragraph">
+<p>From v2.x.x Java 8 will be the minimum required version.
+If you are forced to use Java 7, we recommend using the version 1.5.8 with Asciidoctorj 1.6.2 for the most up to date features.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="removal-of-imagesdir-configuration-and-change-of-its-default-value"><a class="anchor" href="#removal-of-imagesdir-configuration-and-change-of-its-default-value"></a>2.2. Removal of <code>imagesDir</code> configuration and change of its default value</h3>
+<div class="paragraph">
+<p>Related discussion: <a href="https://github.com/asciidoctor/asciidoctor-maven-plugin/issues/296" class="bare">https://github.com/asciidoctor/asciidoctor-maven-plugin/issues/296</a></p>
+</div>
+<div class="paragraph">
+<p>Until v1.5.8 it was possible to set the <code>imagesdir</code> Asciidoctor attribute (<a href="https://asciidoctor.org/docs/user-manual/#setting-the-location-of-images" class="bare">https://asciidoctor.org/docs/user-manual/#setting-the-location-of-images</a>) using the special <code>imagesDir</code> configuration as follows.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;configuration&gt;
+    &lt;imagesDir&gt;my-images&lt;/imagesDir&gt;
+&lt;/configuration&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Additionally, this configuration had as default value <code>images</code>, which meant that you could just put your images inside a directory called like that.
+However, this is a different behavior from default Asciidoctor (<a href="https://asciidoctor.org/docs/user-manual/#setting-the-location-of-images">#setting-the-location-of-images</a>) as well as other build tools like asciidoctor-gradle-plugin.</p>
+</div>
+<div class="paragraph">
+<p><strong>Version 2.0.0 will align with Asciidoctor removing the default value and encouraging the configuration of <code>imagesdir</code> as any other attribute.</strong>
+If you are relying on the default value, make sure to add the attribute as in the example.</p>
+</div>
+<div class="listingblock">
+<div class="title">new configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;configuration&gt;
+    &lt;attributes&gt;
+        &lt;imagesdir&gt;images&lt;/imagesdir&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+    &lt;/attributes&gt;
+&lt;/configuration&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Note the attribute is all in lowercase.</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="removal-of-sourcehighlighter"><a class="anchor" href="#removal-of-sourcehighlighter"></a>2.3. Removal of <code>sourceHighlighter</code></h3>
+<div class="paragraph">
+<p>To avoid ambiguity between the configuration and attributes section, and make configuration more clear.</p>
+</div>
+<div class="paragraph">
+<p><strong>The configuration option <code>sourceHighlighter</code> has been removed in favour of setting it as an attribute.</strong>
+If you are using it, you will need to set it as follows:</p>
+</div>
+<div class="listingblock">
+<div class="title">new configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;configuration&gt;
+    &lt;attributes&gt;
+        &lt;source-highlighter&gt;coderay&lt;/source-highlighter&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+    &lt;/attributes&gt;
+&lt;/configuration&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Note the attribute contains a hyphen.</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="removal-of-attributemissing-and-attributeundefined"><a class="anchor" href="#removal-of-attributemissing-and-attributeundefined"></a>2.4. Removal of <code>attributeMissing</code> and <code>attributeUndefined</code></h3>
+<div class="paragraph">
+<p>Related discussion: <a href="https://github.com/asciidoctor/asciidoctor-maven-plugin/issues/417" class="bare">https://github.com/asciidoctor/asciidoctor-maven-plugin/issues/417</a></p>
+</div>
+<div class="paragraph">
+<p>These options serve to modify behaviours related with attributes.
+From showing console warning messages, to removing lines of text amongst others.</p>
+</div>
+<div class="paragraph">
+<p><strong>If you are currently using these options, you will need to add them to the attributes section.</strong></p>
+</div>
+<div class="listingblock">
+<div class="title">new configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;configuration&gt;
+    &lt;attributes&gt;
+        &lt;attribute-missing&gt;warn&lt;/attribute-missing&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+        &lt;attribute-undefined&gt;drop-line&lt;/attribute-undefined&gt;
+    &lt;/attributes&gt;
+&lt;/configuration&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Note both attributes contains a hyphen.</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="replacement-of-templatedir-now-deprecated-in-asciidoctor-by-templatedirs"><a class="anchor" href="#replacement-of-templatedir-now-deprecated-in-asciidoctor-by-templatedirs"></a>2.5. Replacement of <code>templateDir</code> (now deprecated in Asciidoctor) by <code>templateDirs</code></h3>
+<div class="paragraph">
+<p>Related discussion: <a href="https://github.com/asciidoctor/asciidoctor-maven-plugin/issues/265" class="bare">https://github.com/asciidoctor/asciidoctor-maven-plugin/issues/265</a></p>
+</div>
+<div class="paragraph">
+<p>As stated in <a href="https://asciidoctor.org/docs/user-manual/#ruby-api-options" class="bare">https://asciidoctor.org/docs/user-manual/#ruby-api-options</a> <code>template_dir</code> option is deprecated in favour of <code>template_dirs</code>.
+Following this change the plugin configuration <code>&lt;templateDir&gt;</code> will be replaced by <code>templateDirs</code>.
+This will allow the use of multiple template directories.</p>
+</div>
+<div class="listingblock">
+<div class="title">previous configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;configuration&gt;
+    &lt;templateDir&gt;my-templates&lt;/templateDir&gt;
+&lt;/configuration&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">new configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;configuration&gt;
+    &lt;templateDirs&gt;
+        &lt;templateDir&gt;my-templates&lt;/templateDir&gt;
+    &lt;/templateDirs&gt;
+&lt;/configuration&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="setting-html5-as-default-backend"><a class="anchor" href="#setting-html5-as-default-backend"></a>2.6. Setting 'html5' as default backend</h3>
+<div class="paragraph">
+<p>Related discussion: <a href="https://github.com/asciidoctor/asciidoctor-maven-plugin/issues/188" class="bare">https://github.com/asciidoctor/asciidoctor-maven-plugin/issues/188</a></p>
+</div>
+<div class="paragraph">
+<p>Current default backend is <code>docbook</code>, contrary to Asciidoctor which is <code>html5</code>.
+This made sense back when the plugin was created because DocBook was the main scenario.
+Nowadays the main usage is HTML conversion, so it makes sense to set <code>html5</code> as default backend.
+This should reduce configuration for most users.</p>
+</div>
+<div class="paragraph">
+<p><strong>If you are converting to HTML, you won&#8217;t need to set the <code>&lt;backend&gt;</code> element.
+If you are converting to Docbook, you will need to set it explicitly as follows.</strong></p>
+</div>
+<div class="listingblock">
+<div class="title">backward compatible configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;configuration&gt;
+    &lt;backend&gt;docbook&lt;/backend&gt;
+&lt;/configuration&gt;</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For advanced conversion needs, probably check <a href="https://antora.org/" class="bare">https://antora.org/</a>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="changing-default-sources-directory"><a class="anchor" href="#changing-default-sources-directory"></a>2.7. Changing default sources directory</h3>
+<div class="paragraph">
+<p>Related discussion: <a href="https://github.com/asciidoctor/asciidoctor-maven-plugin/issues/254" class="bare">https://github.com/asciidoctor/asciidoctor-maven-plugin/issues/254</a>.</p>
+</div>
+<div class="paragraph">
+<p>Previous versions of the plugin search for AsciiDoc documents in <code>src/main/asciidoc</code>.
+In case the folder does not exist, the plugin skips the execution.</p>
+</div>
+<div class="paragraph">
+<p>This is being changed to a fallback mechanism where several paths are searched in specific order.
+The new default value is <code>src/docs/asciidoc</code> to reflect the difference in  nature of AsciiDoc sources from executable code.
+If the path does not exist, <code>src/asciidoc</code> and <code>src/main/asciidoc</code> are searched for in that order.</p>
+</div>
+<div class="paragraph">
+<p><strong>This change does not break compatibility</strong> and has the advantage of following the same pattern as the <a href="https://github.com/asciidoctor/asciidoctor-gradle-plugin">asciidoctor-gradle-plugin</a>, making easier to test both plugins.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="asciidoctorj-changes"><a class="anchor" href="#asciidoctorj-changes"></a>3. Asciidoctorj changes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Not part of the asciidoctor-maven-plugin, but important to consider during upgrade, the <a href="https://github.com/asciidoctor/asciidoctorj/tree/v2.0.0-RC.1#extension-api">AsciidocotorJ extension API</a> has suffered modifications.</p>
+</div>
+<div class="paragraph">
+<p>These are simple and can be spotted with help of the IDE once the AsciidoctorJ dependency has been updated.
+Please, review them alongside the maven-plugin.</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="tips-and-tricks.html">Tips and Tricks</a></span>
+  <span class="next"><a href="../site-integration/site-integration.html">Setup &amp; Configuration</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

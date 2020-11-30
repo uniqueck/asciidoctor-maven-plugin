@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>auto-refresh: Automatically converting on change :: maven-plugin docs</title>
+    <link rel="prev" href="process-asciidoc.html">
+    <link rel="next" href="http.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">maven-plugin docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Community</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="http://discuss.asciidoctor.org" target="_blank">Discuss</a>
+            <a class="navbar-item" href="https://gitter.im/asciidoctor/asciidoctor" target="_blank">Chat - General</a>
+            <a class="navbar-item" href="https://gitter.im/asciidoctor/asciidoctorj" target="_blank">Chat - Asciidoctor J</a>
+          </div>
+        </div>
+        <a class="navbar-item" href="https://twitter.com/asciidoctor" target="_blank" rel="noopener">
+          <span class="icon">
+            <svg aria-hidden="true" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path fill="#57aaee" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+            </svg>
+          </span>
+         </a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="maven-plugin" data-version="2.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Maven Tools</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Maven Plugin</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Goals</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="process-asciidoc.html">process-asciidoc</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="auto-refresh.html">auto-refresh</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="http.html">http</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../usage.html">Usage</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../command-line-configuration.html">Command Line Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../examples.html">Examples</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Help &amp; Guides</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tips-and-tricks.html">Tips and Tricks</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../v2-migration-guide.html">v2 migration guide</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Maven Site Integration</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../site-integration/site-integration.html">Setup &amp; Configuration</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Project Documentation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../project/contributing.html">Contributing</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../project/copyright-and-licence.html">Copyright and License</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Maven Tools</span>
+    <span class="version">2.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Maven Tools</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">2.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Maven Tools</a></li>
+    <li>Maven Plugin</li>
+    <li>Goals</li>
+    <li><a href="auto-refresh.html">auto-refresh</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/asciidoctor/asciidoctor-maven-plugin/edit/master/docs/modules/plugin/pages/goals/auto-refresh.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">auto-refresh: Automatically converting on change</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Converts documents on change, that is, when one of them is modified, or a new one is added.</p>
+</div>
+<div class="paragraph">
+<p>This plugin goal is aimed to help writing by removing the need for full rebuild to validate changes.
+When the output is HTML, you can combine it with a refresh browser extension or use the <a href="http.html" class="page">http goal</a> to preview document changes while editing.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="setup"><a class="anchor" href="#setup"></a>Setup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As this is a typical Maven plugin, simply declare the plugin in the <code>&lt;plugins&gt;</code> section of your POM file:</p>
+</div>
+<div class="listingblock">
+<div class="title">Plugin declaration in pom.xml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;plugins&gt;
+    &lt;plugin&gt;
+        &lt;groupId&gt;org.asciidoctor&lt;/groupId&gt;
+        &lt;artifactId&gt;asciidoctor-maven-plugin&lt;/artifactId&gt;
+        &lt;version&gt;2.1.0&lt;/version&gt;
+        &lt;dependency&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+            &lt;groupId&gt;org.asciidoctor&lt;/groupId&gt;
+            &lt;artifactId&gt;asciidoctorj&lt;/artifactId&gt;
+            &lt;version&gt;${asciidoctorj.version}&lt;/version&gt;
+        &lt;/dependency&gt;
+        ...
+    &lt;/plugin&gt;
+&lt;/plugins&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The plugin will use the latest Asciidoctorj version available at release.
+To change it, set the desired version as a plugin dependency.</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Goal setup</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;plugin&gt;
+    ...
+    &lt;executions&gt;
+        &lt;execution&gt;
+            &lt;id&gt;output-html&lt;/id&gt;              <i class="conum" data-value="1"></i><b>(1)</b>
+            &lt;phase&gt;generate-resources&lt;/phase&gt; <i class="conum" data-value="2"></i><b>(2)</b>
+            &lt;goals&gt;
+                &lt;goal&gt;auto-refresh&lt;/goal&gt;     <i class="conum" data-value="3"></i><b>(3)</b>
+            &lt;/goals&gt;
+        &lt;/execution&gt;
+    &lt;/executions&gt;
+&lt;/plugin&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>This is simply a unique id for the execution.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The asciidoctor-maven-plugin does not run in any phase by default, so one must be specified.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>The Asciidoctor Maven plugin auto-refresh goal.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Once started, this will keep the maven process running until you type the <code>exit</code> or <code>quit</code> command in the console.
+Or it is manually killed with <em>ctrl+c</em>.</p>
+</div>
+<div id="auto-refresh-goal-config-note" class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Due to some maven limitations, it is possible to run <code>auto-refresh</code> on your current project without changes provided the configuration is at top plugin level.
+Running <code>mvn asciidoctor:auto-refresh</code> will start, but will ignore <code>&lt;configuration&gt;</code> blocks inside <code>&lt;executions&gt;</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">Shared <code>process-asciidoc</code>, <code>auto-refresh</code> configuration example</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;plugin&gt;
+    &lt;groupId&gt;org.asciidoctor&lt;/groupId&gt;
+    &lt;artifactId&gt;asciidoctor-maven-plugin&lt;/artifactId&gt;
+    &lt;version&gt;2.1.0&lt;/version&gt;
+    &lt;configuration&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+        &lt;preserveDirectories&gt;true&lt;/preserveDirectories&gt;
+        &lt;attributes&gt;
+            &lt;source-highlighter&gt;coderay&lt;/source-highlighter&gt;
+            &lt;imagesdir&gt;./images&lt;/imagesdir&gt;
+            &lt;toc&gt;left&lt;/toc&gt;
+            &lt;icons&gt;font&lt;/icons&gt;
+        &lt;/attributes&gt;
+    &lt;/configuration&gt;
+    &lt;executions&gt;
+        &lt;execution&gt;
+            &lt;id&gt;asciidoc-to-html&lt;/id&gt;
+            &lt;phase&gt;generate-resources&lt;/phase&gt;
+            &lt;goals&gt;
+                &lt;goal&gt;process-asciidoc&lt;/goal&gt;
+            &lt;/goals&gt;
+        &lt;/execution&gt;
+        &lt;configuration&gt; <i class="conum" data-value="2"></i><b>(2)</b>
+            &lt;docinfo1&gt;true&lt;/docinfo1&gt;
+        &lt;/configuration&gt;
+    &lt;/executions&gt;
+&lt;/plugin&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Processed configuration.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Ignored configuration.</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuration"><a class="anchor" href="#configuration"></a>Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This goal inherits the same parameters as <a href="process-asciidoc.html" class="page">process-asciidoc</a> and adds an additional parameter:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">interval</dt>
+<dd>
+<p>time in milliseconds between checks of the filesystem.
+Defaults to <code>2000</code></p>
+</dd>
+</dl>
+</div>
+<div class="sect2">
+<h3 id="inherited-options"><a class="anchor" href="#inherited-options"></a>Inherited options</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">sourceDirectory</dt>
+<dd>
+<p>path where source files are located.
+By default checks for <em class="path">${basedir}/src/docs/asciidoc</em>, <em class="path">${basedir}/src/asciidoc</em> or <em class="path">${basedir}/src/main/asciidoc</em> in that order.
+When a custom value is set, no other paths are checked.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>All paths and AsciiDoc documents that start with <code>_</code> are considered <em>internal</em> and are skipped.
+That is, AsciiDocs are not converted and resources are not copied from them, but you can include them normally from other AsciiDocs.<br>
+This is useful to split your sources in sets of master documents and included parts.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</dd>
+<dt class="hdlist1">sourceDocumentName</dt>
+<dd>
+<p>an override to process a single source file; defaults to all files in <code class="path">${sourceDirectory}</code>.</p>
+</dd>
+<dt class="hdlist1">sourceDocumentExtensions</dt>
+<dd>
+<p>(named <code>extensions</code> in v1.5.3 and below) a <code>List&lt;String&gt;</code> of non-standard file extensions to convert.
+Currently, <em>ad</em>, <em>adoc</em>, and <em>asciidoc</em> will be converted by default</p>
+</dd>
+<dt class="hdlist1">resources</dt>
+<dd>
+<p>list of resource files to copy to the output directory (e.g., images, css).
+The configuration follows the same patterns as the <code>maven-resources-plugin</code>.
+If not set, all resources inside <code>${sourceDirectory}</code> are copied.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Converters that embed resources such as images into the output document need to be able to locate those resources at conversion time.
+For example, when generating a PDF (or HTML with the <code>data-uri</code> attribute set), all images need to be aggregated under a common root (i.e., image catalog).
+The <code>imagesdir</code> attribute should be overridden to point to that folder.
+When converting to HTML, images must be copied to the output location so that the browser can resolve those images when the user views the page.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;resources&gt;
+    &lt;resource&gt;
+        &lt;!-- (Mandatory) Directory to copy from. Paths are relative to maven's ${baseDir} --&gt;
+        &lt;directory&gt;DIRECTORY&lt;/directory&gt;
+        &lt;!-- (Optional) Directory to copy to. By default uses the option `outputDirectory` --&gt;
+        &lt;targetPath&gt;OUTPUT_DIR&lt;/targetPath&gt;
+        &lt;!-- (Optional) NOTE: SVN, GIT and other version control files are excluded by default, there's no need to add them --&gt;
+        &lt;excludes&gt;
+            &lt;exclude&gt;**/.txt&lt;/exclude&gt;
+        &lt;/excludes&gt;
+        &lt;!-- (Optional) If not set, includes all files but default exceptions mentioned --&gt;
+        &lt;includes&gt;
+            &lt;include&gt;**/*.jpg&lt;/include&gt;
+            &lt;include&gt;**/*.gif&lt;/include&gt;
+        &lt;/includes&gt;
+    &lt;/resource&gt;
+    ...
+&lt;/resources&gt;</code></pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">outputDirectory</dt>
+<dd>
+<p>locations where converted sources and copied resources will be places.
+Note that relative paths are added to the project root path.
+Defaults to <em class="path">${project.build.directory}/generated-docs</em>.</p>
+</dd>
+<dt class="hdlist1">outputFile</dt>
+<dd>
+<p>defaults to <code>null</code>, used to override the name of the generated output file, can be a relative or absolute path.
+Useful for backends that create a single file, e.g. the pdf backend.
+All output will be redirected to the same file, the same way as the <code>-o, --out-file=OUT_FILE</code> option from the <code>asciidoctor</code> CLI command.</p>
+</dd>
+<dt class="hdlist1">baseDir</dt>
+<dd>
+<p>(not Maven&#8217;s basedir) enables to set the root path for resources (e.g. included files), defaults to <code>${sourceDirectory}</code></p>
+</dd>
+<dt class="hdlist1">skip</dt>
+<dd>
+<p>set this to <code>true</code> to bypass generation, defaults to <code>false</code></p>
+</dd>
+<dt class="hdlist1">preserveDirectories</dt>
+<dd>
+<p>enables to specify whether the documents should be converted in the same folder structure as in the source directory or not, defaults to <code>false</code>.
+When <code>true</code>, instead of generating all output in a single folder, output files are generated in the same structure.
+See the following example</p>
+<div class="literalblock">
+<div class="content">
+<pre>    ├── docs                          ├── docs
+    │   ├── examples.adoc             │   ├── examples.html
+    │   └── examples            =&gt;    │   └── examples
+    │       ├── html.adoc             │       ├── html.html
+    │       └── docbook.adoc          │       └── docbook.html
+    └── index.adoc                    └── index.html</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">relativeBaseDir</dt>
+<dd>
+<p>only used when baseDir is not set, enables to specify that each AsciiDoc file must search for its resources in the same folder (for example, included files).
+Internally, for each AsciiDoc source, sets <code>baseDir</code> to the same path as the source file.
+Defaults to <code>false</code></p>
+</dd>
+<dt class="hdlist1">backend</dt>
+<dd>
+<p>defaults to <code>html5</code></p>
+</dd>
+<dt class="hdlist1">doctype</dt>
+<dd>
+<p>defaults to <code>null</code> (which trigger&#8217;s Asciidoctor&#8217;s default of <code>article</code>)</p>
+</dd>
+<dt class="hdlist1">eruby</dt>
+<dd>
+<p>defaults to erb, the version used in JRuby</p>
+</dd>
+<dt class="hdlist1">headerFooter</dt>
+<dd>
+<p>defaults to <code>true</code></p>
+</dd>
+<dt class="hdlist1">templateDirs</dt>
+<dd>
+<p>list of directories of compatible templates to be used instead of the default built-in templates, empty by default.</p>
+</dd>
+<dt class="hdlist1">templateEngine</dt>
+<dd>
+<p>template engine to use for the custom converter templates, disabled by default (<code>null</code>)</p>
+</dd>
+<dt class="hdlist1">templateCache</dt>
+<dd>
+<p>enables the built-in cache used by the template converter when reading the source of template files.
+Only relevant if the <code>:template_dirs</code> option is specified, defaults to <code>true</code>.</p>
+</dd>
+<dt class="hdlist1">sourcemap</dt>
+<dd>
+<p>adds file and line number information to each parsed block (<code>lineno</code> and <code>source_location</code> attributes), defaults to <code>false</code></p>
+</dd>
+<dt class="hdlist1">catalogAssets</dt>
+<dd>
+<p>tells the parser to capture images and links in the reference table available via the <code>references</code> property on the document AST object (experimental), defaults to <code>false</code></p>
+</dd>
+<dt class="hdlist1">attributes</dt>
+<dd>
+<p>a <code>Map&lt;String,Object&gt;</code> of Asciidoctor attributes to pass for conversion, defaults to <code>null</code>.
+Refer to the <a href="http://asciidoctor.org/docs/user-manual/#attribute-catalog">catalog of document attributes</a> in the Asciidoctor user manual for a complete list.</p>
+<div class="listingblock">
+<div class="title">example</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;attributes&gt;
+    &lt;toc&gt;left&lt;/toc&gt;
+    &lt;icons&gt;font&lt;/icons&gt;
+    &lt;imagesdir&gt;images&lt;/imagesdir&gt;
+    &lt;source-highlighter&gt;coderay&lt;/source-highlighter&gt;
+&lt;/attributes&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In addition to those attributes found in this section, any Maven property is also passed as attribute (replacing . by -).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;properties&gt;
+  &lt;my-site.version&gt;2.3.0&lt;/my-site.version&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+&lt;/properties&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Will be passed as <code>my-site-version</code> to the converter.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Note that when defining a build with multiple executions, shared attributes can be set in the global <code>&lt;configuration&gt;</code> section of the plugin.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Boolean attributes only require to be enabled or <em>set</em>.
+These, can be set with a empty tag or a boolean value.
+To <em>unset</em> an attribute, use value <code>false</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;embedded/&gt;
+&lt;sectnums&gt;true&lt;/sectnums&gt;
+&lt;linkcss&gt;false&lt;/linkcss&gt;</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</dd>
+<dt class="hdlist1">embedAssets</dt>
+<dd>
+<p>embeds the CSS file and images into the output, defaults to <code>false</code></p>
+</dd>
+<dt class="hdlist1">gemPaths</dt>
+<dd>
+<p>enables to specify the location to one or more gem installation directories (same as GEM_PATH environment var), <code>empty</code> by default</p>
+</dd>
+<dt class="hdlist1">requires</dt>
+<dd>
+<p>a <code>List&lt;String&gt;</code> to specify additional Ruby libraries not packaged in AsciidoctorJ, <code>empty</code> by default</p>
+</dd>
+<dt class="hdlist1">extensions</dt>
+<dd>
+<p><code>List</code> of extensions to include during the conversion process (see <a href="https://github.com/asciidoctor/asciidoctorj/blob/master/docs/integrator-guide.adoc#automatically-loading-extensions">AsciidoctorJ&#8217;s Extension API</a> for information about the available options).
+For each extension, the implementation class must be specified in the <code>className</code> parameter, the <code>blockName</code> is only required when configuring a <em>BlockProcessor</em>, <em>BlockMacroProcessor</em> or <em>InlineMacroProcessor</em>.</p>
+<div class="listingblock">
+<div class="title">extensions configuration example</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;plugin&gt;
+    ...
+    &lt;executions&gt;
+        &lt;execution&gt;
+            &lt;configuration&gt;
+                ...
+                &lt;extensions&gt;
+                    &lt;extension&gt;
+                        &lt;className&gt;org.asciidoctor.maven.SomePreprocessor&lt;/className&gt;
+                    &lt;/extension&gt;
+                    &lt;extension&gt;
+                        &lt;className&gt;org.asciidoctor.maven.SomeBlockProcessor&lt;/className&gt;
+                        &lt;blockName&gt;yell&lt;/blockName&gt;
+                    &lt;/extension&gt;
+                &lt;/extensions&gt;
+            &lt;/configuration&gt;
+        &lt;/execution&gt;
+    &lt;/executions&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+            &lt;groupId&gt;org.asciidoctor.maven&lt;/groupId&gt;
+            &lt;artifactId&gt;my-asciidoctor-extensions&lt;/artifactId&gt;
+            &lt;version&gt;1.0.0&lt;/version&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+&lt;/plugin&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Extensions must be included in the plugin&#8217;s execution classpath, not in the project&#8217;s.</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Extensions can also be integrated through the SPI interface implementation.
+This method does not require any configuration in the <em class="path">pom.xml</em>, see <a href="https://github.com/asciidoctor/asciidoctorj/blob/master/docs/integrator-guide.adoc#automatically-loading-extensions">Automatically loading extensions</a> for details.
+</td>
+</tr>
+</table>
+</div>
+</dd>
+<dt class="hdlist1">enableVerbose</dt>
+<dd>
+<p>enables Asciidoctor verbose messages, defaults to <code>false</code>.
+Enable it, for example, if you want to validate <a href="https://asciidoctor.org/docs/user-manual/#validating-internal-cross-references">internal cross references</a> and capture the messages with the logHandler option.</p>
+</dd>
+</dl>
+</div>
+<div id="logHandler-configuration" class="dlist">
+<dl>
+<dt class="hdlist1">logHandler</dt>
+<dd>
+<p>enables processing options for Asciidoctor messages (e.g. errors on missing included files), to either hide messages or setup build fail conditions based on them.
+Options are:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>outputToConsole</code>: <code>Boolean</code>, defaults to <code>true</code>.
+Redirects all Asciidoctor messages to Maven&#8217;s console logger as INFO during conversion.</p>
+</li>
+<li>
+<p><code>failIf</code>: build fail conditions, disabled by default.
+Allows setting one or many conditions that when met, abort the Maven build with <code>BUILD FAILURE</code> status.</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Note that the plugin matches that all conditions are met together.
+Unless you are controlling a very specific case, setting one condition should be enough.<br>
+Also, messages matching fail conditions will be sent to Maven&#8217;s logger as ERROR.
+So, when enabling <code>outputToConsole</code>, some messages will appear duplicated as both INFO and ERROR.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Currently, two conditions can be defined:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>severity</code>: severity of the Asciidoctor message, in order: <code>INFO</code>,<code>WARN</code>,<code>ERROR</code>,<code>FATAL</code>,<code>UNKNOWN</code>.
+Build will fail if a message is found of severity equal or higher.</p>
+</li>
+<li>
+<p><code>containsText</code>: text to search inside messages.
+Build will fail if the text is found.<br>
+For example, set <code>include</code> to fail on any issue related to included files regardless the severity level.</p>
+<div class="listingblock">
+<div class="title">example: fail on any message</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;logHandler&gt;
+    &lt;outputToConsole&gt;false&lt;/outputToConsole&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+    &lt;failIf&gt;
+        &lt;severity&gt;DEBUG&lt;/severity&gt; <i class="conum" data-value="2"></i><b>(2)</b>
+    &lt;/failIf&gt;
+&lt;/logHandler&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Do not show messages as INFO in Maven output.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Build will fail on any message of severity <code>DEBUG</code> or higher, that includes all.
+All matching messages will appear as ERROR in Maven output.</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Since version 1.5.8 of AsciidoctorJ set <code>enableVerbose</code> to <code>true</code> option to validate internal cross references, this is being improved to avoid false positives-
+See <a href="https://github.com/asciidoctor/asciidoctor/issues/2722">#2722</a> if your are interested in the details.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="error-handling"><a class="anchor" href="#error-handling"></a>Error handling</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If <code>failIf</code> is set and errors are present after start, these will be reported but the plugin will continue running.
+If errors are found during initialization, plugin won&#8217;t start.</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="process-asciidoc.html">process-asciidoc</a></span>
+  <span class="next"><a href="http.html">http</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
