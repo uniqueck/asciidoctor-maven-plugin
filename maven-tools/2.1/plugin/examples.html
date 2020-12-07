@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Command Line Configuration :: maven-plugin docs</title>
-    <link rel="prev" href="usage.html">
-    <link rel="next" href="examples.html">
+    <title>Examples :: maven-plugin docs</title>
+    <link rel="prev" href="command-line-configuration.html">
+    <link rel="next" href="tips-and-tricks.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
@@ -42,7 +42,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="maven-plugin" data-version="2.1">
+<div class="nav-container" data-component="maven-tools" data-version="2.1">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -76,10 +76,10 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="usage.html">Usage</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="command-line-configuration.html">Command Line Configuration</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="examples.html">Examples</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -156,57 +156,20 @@
   <ul>
     <li><a href="../index.html">Maven Tools</a></li>
     <li>Maven Plugin</li>
-    <li><a href="command-line-configuration.html">Command Line Configuration</a></li>
+    <li><a href="examples.html">Examples</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/asciidoctor/asciidoctor-maven-plugin/edit/master/docs/modules/plugin/pages/command-line-configuration.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/asciidoctor/asciidoctor-maven-plugin/edit/master/docs/modules/plugin/pages/examples.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Command Line Configuration</h1>
+<h1 class="page">Examples</h1>
 <div class="paragraph">
-<p>Configuration options can be set (but not replaced) using system properties directly in the command line as follows:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>mvn generate-resources -Dasciidoctor.sourceDirectory=src/docs -Dasciidoctor.outputDirectory=target/docs</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>All options follow the naming convention <em>`asciidoctor.` + option_name</em>.</p>
-</div>
-<div class="paragraph">
-<p>In order to provide a higher degree of flexibility <code>attributes</code> configuration follows a different behavior.
-Attributes defined through the command line are added to the ones already found in the XML configuration.
-The result of it is that attributes and other configuration options can be updated if they are added to the command line as attributes.
-For example, the following configuration could be modified with the command options as seen below.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;configuration&gt;
-    &lt;backend&gt;html5&lt;/backend&gt;
-    &lt;attributes&gt;
-        &lt;toc&gt;left&lt;/toc&gt;
-    &lt;/attributes&gt;
-&lt;/configuration&gt;</code></pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>mvn generate-resources -Dasciidoctor.attributes=toc=right</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>mvn generate-resources -Dasciidoctor.attributes="toc=right source-highlighter=highlight.js imagesdir=my_images"</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Note that in the second case we need to use quotes due to the spaces.</p>
+<p>You can find examples ready to copy-paste in the <a href="https://github.com/asciidoctor/asciidoctor-maven-examples">Asciidoctor Maven examples</a> project.</p>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="usage.html">Usage</a></span>
-  <span class="next"><a href="examples.html">Examples</a></span>
+  <span class="prev"><a href="command-line-configuration.html">Command Line Configuration</a></span>
+  <span class="next"><a href="tips-and-tricks.html">Tips and Tricks</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">

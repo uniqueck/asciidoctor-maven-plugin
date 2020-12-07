@@ -3,16 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Asciidoctor Maven Tools Documentation :: maven-plugin docs</title>
-    <link rel="next" href="plugin/introduction.html">
+    <title>Command Line Configuration :: maven-plugin docs</title>
+    <link rel="prev" href="usage.html">
+    <link rel="next" href="examples.html">
     <meta name="generator" content="Antora 2.3.4">
-    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="../..">maven-plugin docs</a>
+      <a class="navbar-item" href="../../..">maven-plugin docs</a>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -41,12 +42,12 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="maven-plugin" data-version="2.1">
+<div class="nav-container" data-component="maven-tools" data-version="2.1">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="index.html">Maven Tools</a></h3>
+    <h3 class="title"><a href="../index.html">Maven Tools</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -55,41 +56,41 @@
     <span class="nav-text">Maven Plugin</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="plugin/introduction.html">Introduction</a>
+    <a class="nav-link" href="introduction.html">Introduction</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Goals</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="plugin/goals/process-asciidoc.html">process-asciidoc</a>
+    <a class="nav-link" href="goals/process-asciidoc.html">process-asciidoc</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="plugin/goals/auto-refresh.html">auto-refresh</a>
+    <a class="nav-link" href="goals/auto-refresh.html">auto-refresh</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="plugin/goals/http.html">http</a>
+    <a class="nav-link" href="goals/http.html">http</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="plugin/usage.html">Usage</a>
+    <a class="nav-link" href="usage.html">Usage</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="command-line-configuration.html">Command Line Configuration</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="plugin/command-line-configuration.html">Command Line Configuration</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="plugin/examples.html">Examples</a>
+    <a class="nav-link" href="examples.html">Examples</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Help &amp; Guides</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="plugin/tips-and-tricks.html">Tips and Tricks</a>
+    <a class="nav-link" href="tips-and-tricks.html">Tips and Tricks</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="plugin/v2-migration-guide.html">v2 migration guide</a>
+    <a class="nav-link" href="v2-migration-guide.html">v2 migration guide</a>
   </li>
 </ul>
   </li>
@@ -104,7 +105,7 @@
     <span class="nav-text">Maven Site Integration</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="site-integration/index.html">Setup &amp; Configuration</a>
+    <a class="nav-link" href="../site-integration/index.html">Setup &amp; Configuration</a>
   </li>
 </ul>
   </li>
@@ -117,10 +118,10 @@
     <span class="nav-text">Project Documentation</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="project/contributing.html">Contributing</a>
+    <a class="nav-link" href="../project/contributing.html">Contributing</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="project/copyright-and-licence.html">Copyright and License</a>
+    <a class="nav-link" href="../project/copyright-and-licence.html">Copyright and License</a>
   </li>
 </ul>
   </li>
@@ -139,7 +140,7 @@
       <span class="title">Maven Tools</span>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="index.html">2.1</a>
+          <a href="../index.html">2.1</a>
         </li>
       </ul>
     </li>
@@ -153,36 +154,59 @@
 <button class="nav-toggle"></button>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="index.html">Maven Tools</a></li>
-    <li><a href="index.html">Asciidoctor Maven Tools Documentation</a></li>
+    <li><a href="../index.html">Maven Tools</a></li>
+    <li>Maven Plugin</li>
+    <li><a href="command-line-configuration.html">Command Line Configuration</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/asciidoctor/asciidoctor-maven-plugin/edit/master/docs/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/asciidoctor/asciidoctor-maven-plugin/edit/master/docs/modules/plugin/pages/command-line-configuration.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Asciidoctor Maven Tools Documentation</h1>
+<h1 class="page">Command Line Configuration</h1>
 <div class="paragraph">
-<p>The Asciidoctor Maven Plugin is the official way to convert your <a href="http://asciidoc.org">AsciiDoc</a> documentation using <a href="http://asciidoctor.org">Asciidoctor</a> from an <a href="http://maven.apache.org">Apache Maven</a> build.</p>
+<p>Configuration options can be set (but not replaced) using system properties directly in the command line as follows:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>mvn generate-resources -Dasciidoctor.sourceDirectory=src/docs -Dasciidoctor.outputDirectory=target/docs</pre>
+</div>
 </div>
 <div class="paragraph">
-<p>The project main goal is to offer a thin layer on top of <a href="https://github.com/asciidoctor/asciidoctorj">Asciidoctorj</a> following as much as possible to common Maven practices.</p>
+<p>All options follow the naming convention <em>`asciidoctor.` + option_name</em>.</p>
 </div>
 <div class="paragraph">
-<p>The conversion can happen in 2 flavors:</p>
+<p>In order to provide a higher degree of flexibility <code>attributes</code> configuration follows a different behavior.
+Attributes defined through the command line are added to the ones already found in the XML configuration.
+The result of it is that attributes and other configuration options can be updated if they are added to the command line as attributes.
+For example, the following configuration could be modified with the command options as seen below.</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>As a <a href="plugin/introduction.html" class="page">Maven plugin</a>: AsciiDoc files are converted at full Asciidoctor power independently from Maven site,</p>
-</li>
-<li>
-<p>As a <a href="site-integration/index.html" class="page">Maven site module</a>: AsciiDoc files are integrated with <a href="https://maven.apache.org/doxia/">Maven Doxia</a> tools, however, with a few limitations.</p>
-</li>
-</ol>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;configuration&gt;
+    &lt;backend&gt;html5&lt;/backend&gt;
+    &lt;attributes&gt;
+        &lt;toc&gt;left&lt;/toc&gt;
+    &lt;/attributes&gt;
+&lt;/configuration&gt;</code></pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>mvn generate-resources -Dasciidoctor.attributes=toc=right</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>mvn generate-resources -Dasciidoctor.attributes="toc=right source-highlighter=highlight.js imagesdir=my_images"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that in the second case we need to use quotes due to the spaces.</p>
 </div>
 <nav class="pagination">
-  <span class="next"><a href="plugin/introduction.html">Introduction</a></span>
+  <span class="prev"><a href="usage.html">Usage</a></span>
+  <span class="next"><a href="examples.html">Examples</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -195,7 +219,7 @@
   <p>This page was built using the Antora default UI.</p>
   <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
 </footer>
-<script src="../../_/js/site.js"></script>
-<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
   </body>
 </html>
