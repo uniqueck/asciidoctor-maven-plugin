@@ -361,7 +361,8 @@ Specifies additional Ruby libraries not packaged in AsciidoctorJ, <code>empty</c
 <dd>
 <p>Similar to the plugin&#8217;s <code>attributes</code>.<br>
 Allows defining a set of Asciidoctor attributes to be passed to the conversion.<br>
-In addition to those attributes found in this section, any Maven property is also passed as attribute (replacing . by -).</p>
+In addition to attributes set in this section, Maven properties are also passed as attribute (replacing . by - in the name).
+These include those defined in the <code>&lt;properties&gt;</code> section of the project, parent projects and the user&#8217;s <code>settings.xml</code>.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;properties&gt;
