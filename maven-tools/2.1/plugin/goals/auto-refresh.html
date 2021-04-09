@@ -555,7 +555,7 @@ To <em>unset</em> an attribute, use value <code>false</code>.</p>
 </dd>
 <dt class="hdlist1">extensions</dt>
 <dd>
-<p><code>List</code> of extensions to include during the conversion process (see <a href="https://github.com/asciidoctor/asciidoctorj/blob/master/docs/integrator-guide.adoc#automatically-loading-extensions">AsciidoctorJ&#8217;s Extension API</a> for information about the available options).
+<p><code>List</code> of extensions to include during the conversion process (see <a href="https://docs.asciidoctor.org/asciidoctorj/latest/extensions/extensions-introduction/">AsciidoctorJ&#8217;s Extension API</a> for information about the available options).
 For each extension, the implementation class must be specified in the <code>className</code> parameter, the <code>blockName</code> is only required when configuring a <em>BlockProcessor</em>, <em>BlockMacroProcessor</em> or <em>InlineMacroProcessor</em>.</p>
 <div class="listingblock">
 <div class="title">extensions configuration example</div>
@@ -604,7 +604,7 @@ For each extension, the implementation class must be specified in the <code>clas
 </td>
 <td class="content">
 Extensions can also be integrated through the SPI interface implementation.
-This method does not require any configuration in the <em class="path">pom.xml</em>, see <a href="https://github.com/asciidoctor/asciidoctorj/blob/master/docs/integrator-guide.adoc#automatically-loading-extensions">Automatically loading extensions</a> for details.
+This method does not require any configuration in the <em class="path">pom.xml</em>, see <a href="https://docs.asciidoctor.org/asciidoctorj/latest/extensions/register-extensions-automatically/">Automatically loading extensions</a> for details.
 </td>
 </tr>
 </table>
